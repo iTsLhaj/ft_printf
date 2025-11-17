@@ -24,7 +24,7 @@ This function handles the following conversions:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/iTsLhaj/ft_printf.git](https://github.com/iTsLhaj/ft_printf.git)
+    git clone https://github.com/iTsLhaj/ft_printf.git
     ```
 2.  **Compile the library:**
     ```bash
