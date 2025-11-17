@@ -6,20 +6,20 @@
 /*   By: hmouhib <hmouhib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:22:42 by hmouhib           #+#    #+#             */
-/*   Updated: 2023/11/29 17:58:49 by hmouhib          ###   ########.fr       */
+/*   Updated: 2023/12/04 18:16:28 by hmouhib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libftprintf.h"
 
-int	ft_toupper(int c)
+static int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);
 	return (c);
 }
 
-void	ft_puthex(unsigned int n, t_bool up, int *counter)
+void	ft_puthex(unsigned int n, int up, int *counter)
 {
 	char	*hbase;
 	char	c;

@@ -6,12 +6,11 @@
 /*   By: hmouhib <hmouhib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:41:01 by hmouhib           #+#    #+#             */
-/*   Updated: 2023/11/29 18:31:53 by hmouhib          ###   ########.fr       */
+/*   Updated: 2023/12/04 18:18:53 by hmouhib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-#include <stdarg.h>
 
 static int	print(char *buffer, va_list lst)
 {
@@ -31,9 +30,9 @@ static int	print(char *buffer, va_list lst)
 	else if (*buffer == 'x' || *buffer == 'X')
 	{
 		if (*buffer == 'X')
-			ft_puthex(va_arg(lst, unsigned int), TRUE, &result);
+			ft_puthex(va_arg(lst, unsigned int), 1, &result);
 		else
-			ft_puthex(va_arg(lst, unsigned int), FALSE, &result);
+			ft_puthex(va_arg(lst, unsigned int), 0, &result);
 	}
 	else
 		result += ft_putchar(*buffer);
@@ -46,6 +45,8 @@ int	ft_printf(char *buffer, ...)
 	int		r;
 
 	r = 0;
+	if (!buffer)
+		return (--r);
 	va_start(lst, buffer);
 	while (*buffer)
 	{
